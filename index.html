@@ -7,53 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    <?php
-        $name = "";
-        $email = "";
-        $phone = "";
-        $message = "";
-        $error = "";
-        $success = "";
-        if(isset($_POST['submit'])){
-            $name = $_POST['name'];
-            $email = $_POST['email'];
-            $phone = $_POST['phone'];
-            $message = $_POST['message'];
-            if(empty($name)){
-                $error = "Name is required";
-            }elseif(empty($email)){
-                $error = "Email is required";
-            }elseif(empty($phone)){
-                $error = "Phone is required";
-            }elseif(empty($message)){
-                $error = "Message is required";
-            }else{
-                $success = "Your message has been sent";
-            }
-        }
-    ?>
-    <form action="index.php" method="post">
-        <div>
-            <label for="name">Name</label>
-            <input type="text" name="name" id="name" value="<?php echo $name; ?>">
-            <span><?php echo $error; ?></span>
-        </div>
-        <div>
-            <label for="email">Email</label>
-            <input type="text" name="email" id="email" value="<?php echo $email; ?>">
-            <span><?php echo $error; ?></span>
-        </div>
-        <div>
-            <label for="phone">Phone</label>
-            <input type="text" name="phone" id="phone" value="<?php echo $phone; ?>">
-            <span><?php echo $error; ?></span>
-        </div>
-        <div>
-            <label for="message">Message</label>
-            <textarea name="message" id="message" cols="30" rows="10"><?php echo $message; ?></textarea>
-            <span><?php echo $error; ?></span>
-        </div>
-        <div>
-            <input type         ="submit" name="submit" value="Send">       
+  <h1>Hello Rafly</h1>
 </body>
 </html>
