@@ -1,5 +1,5 @@
 const countDown = () => {
-    const countDate = new Date('Nov 26, 2021, 23:59:00').getTime();
+    const countDate = new Date('Nov 26, 2021, 00:00:00').getTime();
     const now = new Date().getTime()
     const gap = countDate - now;
 
@@ -38,14 +38,29 @@ function removeMain() {
 
 function birthday() {
     const comingSoon = document.querySelector('.coming-soon');
-    const content = `<div class="greeting">
+    const content = `
+    <div class="greeting">
+        <figure>
+        <img class="cat1 animate__animated animate__bounce" src="./assets/img/kittie/cat7.png" alt="">
+        <img class="cat2" src="./assets/img/kittie/cat9.png" alt="">
+        <img class="cat3" src="./assets/img/kittie/cat10.png" alt="">
+        <img class="balloon1" src="./assets/img/2.png" alt="">
+        </figure>
         <h2 id=greeting></h2>
         <h3 id=wish></h3> 
-    </div>`
+        <button id ="btn" class="noselect">SURPRISES</button>
+        <audio id="birth" controls>
+        <source src="./assets/sounds/birth.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+        </audio>
+    </div>
+    `
 
     setTimeout(() => {
         comingSoon.innerHTML = content
         greeting()
+        birth()
+        animated()
     }, 1000)
     setTimeout(() => {
         wish()
@@ -54,6 +69,9 @@ function birthday() {
 
 
 function greeting() {
+    const body = document.querySelector('body');
+    body.style.background = "url(assets/img/bg.jpg) no-repeat";
+
     let greeting = new TypeIt("#greeting", {
         strings: "HAPPY BIRTHDAY LULUUU !",
         lifeLike: true,
@@ -96,4 +114,94 @@ function wish() {
         })
         .type("<em>- R</em>")
         .go();
+}
+
+function birth() {
+    const audio = document.getElementById('birth');
+    const btn = document.getElementById('btn');
+    audio.hidden = true;
+    btn.addEventListener('click', () => {
+        audio.play()
+    })
+}
+
+function animated() {
+    const cat1 = document.querySelector(".cat1");
+    const cat2 = document.querySelector(".cat2");
+    const cat3 = document.querySelector(".cat3");
+    const balloon1 = document.querySelector(".balloon1");
+    const xMax = 16;
+
+    const tl = anime.timeline({
+        targets: '.elastic-easing-demo .line:nth-child(1) .el',
+        easing: 'easeInElastic(1, .6)'
+    });
+
+    tl.add({
+        targets: cat1,
+        scale: [{
+                value: 1.5,
+                duration: 1000
+            },
+            {
+                value: 1,
+                duration: 1000
+            }
+        ]
+    });
+
+    tl.add({
+        targets: cat2,
+        scale: [{
+                value: 1.5,
+                duration: 1000
+            },
+            {
+                value: 1,
+                duration: 1000
+            }
+        ]
+    });
+
+    tl.add({
+        targets: cat3,
+        translateX: [{
+                value: xMax * -1,
+            },
+            {
+                value: xMax,
+            },
+            {
+                value: xMax / -2,
+            },
+            {
+                value: xMax / 2,
+            },
+            {
+                value: 0,
+            }
+        ],
+
+    })
+
+    tl.add({
+        targets: balloon1,
+        ease: 'linear',
+        loop: true,
+        translateY: [{
+            value: -1200,
+            duration: 12000,
+        }, {
+            value: -750,
+            duration: 3000
+        }],
+        scale: [{
+            value: 1.5,
+            duration: 14000,
+        }, {
+            value: .5,
+            duration: 3000
+        }]
+
+    })
 }
