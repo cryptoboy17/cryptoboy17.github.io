@@ -1,5 +1,5 @@
 const countDown = () => {
-    const countDate = new Date('Nov 26, 2021, 00:00:00').getTime();
+    const countDate = new Date('Nov 25, 2021, 17:00:00').getTime();
     const now = new Date().getTime()
     const gap = countDate - now;
 
@@ -87,24 +87,24 @@ function wish() {
             waitUntilVisible: true,
         })
         .type("ngomong apa yak wkwkw", {
-            delay: 600
+            delay: 1200
         })
-        .move(-10)
-        .delete(20)
-        .type("selamat ulang tasdasd")
+        .pause(1000)
+        .move(-5)
+        .delete(30)
+        .type("pibesdey riweuhh ")
         .move(null, {
             to: "END"
         })
-        .type(" let yees")
+        .type(" lancar yakkk apapun itu")
         .pause(300)
-        .delete(2)
-        .type("sterday use up to muc")
+        .delete(3)
+        .type("jan sedih mulu ah ")
         .move(-4)
-        .type("o")
         .move(null, {
             to: "END"
         })
-        .type("h of today.")
+        .type("pokonya harus semangat cewe keren.")
         .pause(500)
         .break({
             delay: 500
@@ -112,7 +112,7 @@ function wish() {
         .break({
             delay: 500
         })
-        .type("<em>- R</em>")
+        .type("<em>- Rafly</em>")
         .go();
 }
 
