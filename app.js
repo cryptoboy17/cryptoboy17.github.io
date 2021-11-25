@@ -64,7 +64,7 @@ function birthday() {
     }, 1000)
     setTimeout(() => {
         wish()
-    }, 6000)
+    }, 4000)
 }
 
 
