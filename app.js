@@ -46,8 +46,10 @@ function birthday() {
         <img class="cat3" src="./assets/img/kittie/cat10.png" alt="">
         <img class="balloon1" src="./assets/img/2.png" alt="">
         </figure>
+        <div class="greet">
         <h2 id=greeting></h2>
-        <h3 id=wish></h3> 
+        <h4 id=wish></h4> 
+        </div>
         <button id ="btn" class="noselect">SURPRISES</button>
         <audio id="birth" controls>
         <source src="./assets/sounds/birth.mp3" type="audio/mpeg">
